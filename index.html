@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website | Vanilla Javascript</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis excepturi veniam ab at consectetur. Voluptate quod, vitae cupiditate deleniti tenetur voluptates, quas, modi cumque ipsum numquam consectetur tempora obcaecati ea? Libero culpa sint perspiciatis sunt ducimus asperiores unde tempore, odit explicabo! Laudantium maxime, voluptates consequatur magnam voluptatum temporibus hic sint ratione nesciunt iure exercitationem suscipit officiis qui quasi amet nostrum accusantium cumque? Vero repellat at, tempora sed voluptates laborum esse, magnam itaque odio tempore quasi sunt necessitatibus fuga reprehenderit ab. Similique sint quo distinctio nulla possimus culpa ut ea reprehenderit nostrum corporis nemo ex deleniti, placeat, nesciunt sed. Totam, minima?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quae vitae harum dolore omnis laborum ab a, magni sunt autem mollitia iste, deserunt aspernatur veritatis officiis! Repellendus velit sed et eveniet dolor optio deleniti, earum fugit, possimus delectus excepturi at eos rem cum accusamus doloremque. Ut temporibus itaque natus non Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime delectus libero repellat labore, quibusdam distinctio fugiat ea nemo? Nesciunt ducimus praesentium nostrum adipisci veniam. Asperiores fugit doloribus temporibus harum sed.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto recusandae asperiores, nihil eligendi, sunt dolor dolorum beatae voluptatum laborum fugiat eius molestias veniam doloribus explicabo alias libero hic autem aspernatur. Fuga expedita, nihil voluptatum corporis distinctio velit ipsum totam unde blanditiis. Voluptate, cum inventore earum perferendis ut ex. Nisi ipsam ab quos distinctio adipisci deleniti porro inventore aliquid labore vel vero aspernatur ipsa, voluptate, qui sit repellendus fuga! Quisquam aliquid atque ipsam dicta praesentium natus, nesciunt earum vitae vel, laborum ducimus tempore. Est quidem quis magnam similique numquam distinctio nesciunt, animi aliquam. Et ipsa necessitatibus eveniet, maxime laborum quia incidunt.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quae vitae harum dolore omnis laborum ab a, magni sunt autem mollitia iste, deserunt aspernatur veritatis officiis! Repellendus velit sed et eveniet dolor optio deleniti, earum fugit, possimus delectus excepturi at eos rem cum accusamus doloremque. Ut temporibus itaque natus non Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime delectus libero repellat labore, quibusdam distinctio fugiat ea nemo? Nesciunt ducimus praesentium nostrum adipisci veniam. Asperiores fugit doloribus temporibus harum sed.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto recusandae asperiores, nihil eligendi, sunt dolor dolorum beatae voluptatum laborum fugiat eius molestias veniam doloribus explicabo alias libero hic autem aspernatur. Fuga expedita, nihil voluptatum corporis distinctio velit ipsum totam unde blanditiis. Voluptate, cum inventore earum perferendis ut ex. Nisi ipsam ab quos distinctio adipisci deleniti porro inventore aliquid labore vel vero aspernatur ipsa, voluptate, qui sit repellendus fuga! Quisquam aliquid atque ipsam dicta praesentium natus, nesciunt earum vitae vel, laborum ducimus tempore. Est quidem quis magnam similique numquam distinctio nesciunt, animi aliquam. Et ipsa necessitatibus eveniet, maxime laborum quia incidunt.</p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+    
+</body>
+</html>
